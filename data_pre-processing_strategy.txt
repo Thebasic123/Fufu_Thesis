@@ -1,0 +1,26 @@
+This is my data pre-processing strategy for ZZAlpha Ltd. Stock Recommendations 2012-2014 Data Set 
+
+This data set contains stock recommendation for every single trading day from 2012-2014 with around 50
+different machine learning algorithms.
+
+Since this data set only contains long and short information, we need to only select the information we desire.
+
+1.only focus on analysis with both long and short recommendations, we only parse inputs with file format _LONG_SHORT_F.pdf
+
+2.Since there are overlaps in each algorithms' daily analysis, we only keep track of those entries with the size of 20 
+
+3.I use the data from 2012 and 2013 as training data to give each analyst a trustworthiness on a particular stock through iterative filtering algorithm, and use 2014 data as perdition data set to test the performance
+
+4.Since we only have long and short data which is not ideal for the sake of this research, we also need
+to gather data for hold(neutral) options on stock. The general idea of doing so is, finding the most active analysts for a certain stock, and find trading days which those stocks receive the most amount of
+reviews, if some of the most active analysts do not make reviews on those days, we will treat them as hold.
+
+5.In some of the data files,same analyst might make same predication for same stock more than once, we will only count this scenario as recommended once.
+
+6.For iterative filtering data matrix, we use -1 for short, 0 for hold and 1 for long.
+
+Some statistics of the data set(2012,2013):
+
+Number of total stocks: 4335
+Number of analysts : 39
+Number of trading days in training data set: 391
